@@ -51,15 +51,24 @@ postgres=# select oid,relname,reltuples from pg_class where oid='foo'::regclass;
 这里使用oid作为查询条件，可以看出来：
 'foo'::regclass : 这个表达式将 表名转换成了该表的oid
 ```
-例2:
-```
-postgres=# select oid,relname,reltuples from pg_class where oid='foo'::regclass; 
-  oid  | relname | reltuples 
--------+---------+-----------
- 49542 | foo     |         0
-(1 row)
-```
+
 
 根据官网文档：
 
-https://github.com/TheFrancisHe/Postgresql/image/TIM截图20170705141459.png
+![image](https://github.com/TheFrancisHe/Postgresql/image/20170705141459.png)
+
+可以推导出来，其余用法类似。
+
+比如，查看那些表的数据类型为test：
+
+```
+postgres=# select relname  from pg_class where reltype = 'test'::regtype;
+ relname 
+---------
+ test
+(1 row)
+
+test同时也是一张表，创建的test表的同时，也创建了名为test 的数据类型，这属于自定义数据类型的知识。
+```
+
+用法大致是这样，内部原理是怎么样的，请追溯源码。
