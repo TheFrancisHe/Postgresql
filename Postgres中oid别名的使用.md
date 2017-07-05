@@ -55,7 +55,7 @@ postgres=# select oid,relname,reltuples from pg_class where oid='foo'::regclass;
 
 根据官网文档：
 
-![image](https://github.com/TheFrancisHe/Postgresql/image/20170705141459.png)
+![oid别名](https://github.com/TheFrancisHe/Postgresql/blob/master/image/20170705141459.png)
 
 可以推导出来，其余用法类似。
 
