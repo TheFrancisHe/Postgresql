@@ -4,6 +4,13 @@ https://www.postgresql.org/docs/9.5/static/catalog-pg-cast.html
 先从几个示例入手：
 note:这些示例所涉及知识点： 1.类型转换 2.字符串转义
 
+大致总结下此文： 
+pg里的类型转换： 显式、隐式、assignment(有人叫赋值转换，我觉得不大妥，所以就不翻译了。) 这三种转换。
+
+显示： 不同类型间，称为显示转换。 
+隐式：同一类型间，低字节到高字节为隐式转换，比如 int 到 bigint 
+assignment: 同一类型间，高字节到低字节成为发assignment ，比如 smallint到int。
+
 ```
 //
 implicitly-typed literal or constant
@@ -54,8 +61,8 @@ postgres=# select castsource::regtype,casttarget::regtype,castcontext from pg_ca
  castsource |    casttarget    | castcontext 
 ------------+------------------+-------------
  integer    | bigint           | i
- integer    | smallint         | a  //同类型 低到高 
- integer    | real             | i
+ integer    | smallint         | a  //同类型高到低
+ integer    | real             | i
  integer    | double precision | i
  integer    | numeric          | i
  integer    | money            | a  //同类型 money 8 字节，int 4字节，低到高。  在这里 money 可以算作 数值类型。   
