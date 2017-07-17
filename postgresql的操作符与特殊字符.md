@@ -31,7 +31,7 @@ postgres=# select 3 OPERATOR(pg_catalog.*) 4 ;
 ```
 postgres=# prepare p1 (smallint) as select * from sasuke where id=$1;
 PREPARE
-
+//这里面的$1表示第一个变量。  即 p1
 postgres=# execute p1(5);
  id 
 ----
