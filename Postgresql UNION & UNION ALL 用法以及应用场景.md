@@ -35,7 +35,53 @@ postgres=# (select * from t_union limit 3) union select * from t_union where nam
  naruto
 (4 rows)
 ```
+```
+- union 和 union all 的区别： 
+
+// 不带 all 
+postgres=# select * from t_union union select * from t_union ;
+   name    
+-----------
+ naruto
+ frank
+ dancer
+ 张三
+ killerbee
+(5 rows)
+//带all 
+postgres=# select * from t_union union all  select * from t_union ;
+   name    
+-----------
+ killerbee
+ naruto
+ frank
+ dancer
+ 张三
+ killerbee
+ naruto
+ frank
+ dancer
+ 张三
+(10 rows)
+
+
+```
+- 问题来了，区别在哪里？？　想必你也猜出来了：
+
+//区别在这里：
+> The PostgreSQL UNION clause/operator is used to combine the results of two or more SELECT statements without returning any duplicate rows.To use UNION, each SELECT must have the same number of columns selected, the same number of column expressions, the same data type, and have them in the same order but they do not have to be the same length.
+
+> The UNION ALL operator is used to combine the results of two SELECT statements including duplicate rows. The same rules that apply to UNION apply to the UNION ALL operator as well.
+
+所以效果上的区别就是： union过滤相同行， union all 不过滤相同行。 自然前者开销大，较慢，甚至有时候还会用到磁盘进行排序， 而后者较快。
+
+具体还是得看需求需求！！
+
+
+
 // union 在生产中还有各种各种样的花式查询，以下需求来自互联网：
+
+
 
 - 应用场景：
 
