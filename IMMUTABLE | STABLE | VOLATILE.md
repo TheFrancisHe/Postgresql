@@ -15,3 +15,12 @@ http://blog.163.com/digoal@126/blog/static/163877040201151011105494/?suggestedre
     德哥下面这篇 BLOG 用到了 IMMUTABLE 函数对 SQL 进行优化。
 PostgreSQL multi-column concate query condition performance tuning 
 http://blog.163.com/digoal@126/blog/static/1638770402013261167576/?newFollowBlog
+
+
+http://blog.163.com/digoal@126/blog/static/163877040201211241434248/
+
+http://blog.163.com/digoal@126/blog/static/1638770402013111851116709/
+
+http://blog.163.com/digoal@126/blog/static/1638770402012112452432251/
+
+http://blog.163.com/digoal@126/blog/static/163877040201151011105494/
