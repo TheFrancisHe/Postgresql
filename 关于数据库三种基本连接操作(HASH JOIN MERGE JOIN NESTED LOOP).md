@@ -12,3 +12,8 @@ pg clustered index : https://stackoverflow.com/questions/27978157/cluster-and-no
 clustered index :https://stackoverflow.com/questions/1251636/what-do-clustered-and-non-clustered-index-actually-mean
 
 聚簇索引:http://blog.csdn.net/ak913/article/details/8026743
+
+https://stackoverflow.com/questions/1251636/what-do-clustered-and-non-clustered-index-actually-mean
+
+最好的解释：
+https://stackoverflow.com/questions/91688/what-are-the-differences-between-a-clustered-and-a-non-clustered-index
