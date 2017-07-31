@@ -19,3 +19,19 @@ https://zhuanlan.zhihu.com/p/23624390
 
 
 >During a regular index scan, indexes are traversed, in a manner similar to any other tree structure, by comparing a constant against Datums that are stored in the index. Btree-indexed types must satisfy the trichotomy property; that is, the type must follow the reflexive, symmetric and transitive law. Those laws accord with our intuitive understanding of how a type ought to behave anyway, but the fact that an index's physical structure reflects the relative values of Datums actually mandates that these rules be followed by types. Btree indexes contain what are technically redundant copies of the column data that is indexed.
+
+
+反面例子：
+
+```
+postgres=# create index idx_test_c2 on test(c2);
+CREATE INDEX
+postgres=# analyze testonlyscan;
+ANALYZE
+postgres=# explain select * from test where c2=100;
+                               QUERY PLAN                               
+------------------------------------------------------------------------
+ Index Scan using idx_test_c2 on test  (cost=0.29..2.91 rows=1 width=8)
+   Index Cond: (c2 = 100)
+(2 rows)
+```
