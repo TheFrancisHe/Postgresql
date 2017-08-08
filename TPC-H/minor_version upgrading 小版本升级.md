@@ -1,3 +1,5 @@
+手册解释：
+
 >Minor releases never change the internal storage format and are always compatible with earlier and later minor releases of the same major version number, e.g., 8.4.2 is compatible with 8.4, 8.4.1 and 8.4.6. To update between compatible versions, you simply replace the executables while the server is down and restart the server. The data directory remains unchanged — minor upgrades are that simple.
 
 总结： 保持 pgdata不变，替换掉PGHOME里的所有可执行文件。 
