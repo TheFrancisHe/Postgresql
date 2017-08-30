@@ -94,5 +94,33 @@ Linux内核的文件预读readahead
 http://www.cnblogs.com/kerrycode/p/4743015.html
 
 
+readahead
+
+https://zh.wikipedia.org/wiki/Readahead
+
+
+部分内容比官方手册描述的详细些。
+
+https://www.postgresql.org/docs/9.3/static/kernel-resources.html
+
+Managing Kernel Resources
+
+了解你的磁盘之使用bonnie++测试磁盘性能 
+
+http://blog.chinaunix.net/uid-24774106-id-3728780.html
+
+
+swap
+
+https://wiki.archlinux.org/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+
+
+Linux命令-自动挂载文件/etc/fstab功能详解[转]
+
+http://www.cnblogs.com/qiyebao/p/4484047.html
+
+
+
+
 
 
