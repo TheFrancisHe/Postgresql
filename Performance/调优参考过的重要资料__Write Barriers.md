@@ -120,7 +120,50 @@ Linux命令-自动挂载文件/etc/fstab功能详解[转]
 http://www.cnblogs.com/qiyebao/p/4484047.html
 
 
+nodiratime:不修改目录的atime
+
+http://blog.csdn.net/hunanchenxingyu/article/details/38308217?locationNum=1&fps=1
+
+Linux 系统中一些针对文件系统的节能技巧
+
+https://www.ibm.com/developerworks/cn/linux/l-cn-fsgreen/
+
+调整linux内核尽量用内存，而不用swap
+
+http://www.myjishu.com/?p=80
+
+Tuning Red Hat Enterprise Linux for Sybase Databases
+
+https://access.redhat.com/solutions/69988
+
+
+原]性能优化：Swap调优
+
+http://itindex.net/detail/54785-%E6%80%A7%E8%83%BD-%E4%BC%98%E5%8C%96-swap
+
+Linux的内存回收和交换
+
+http://liwei.life/2016/06/27/linux%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6%E5%92%8C%E4%BA%A4%E6%8D%A2/
+
+swappiness
+
+参数值可为 0-100，控制系统 swap 的程序。高数值可优先系统性能，在进程不活跃时主动将其转换出物理内存。低数值可优先互动性并尽量避免将进程转换处物理内存，并降低反应延迟。默认值为 60
+
+
+理解LINUX的MEMORY OVERCOMMIT
+
+http://linuxperf.com/?p=102
 
 
 
+vm overcommit参数
 
+http://mdba.cn/2016/01/11/vm-overcommit%E5%8F%82%E6%95%B0/
+
+swap与释放内存。
+
+http://9237101.blog.51cto.com/9227101/1921268
+
+目前这个这个时代，swap space还有什么意义？ 
+
+https://www.zhihu.com/question/26573247
