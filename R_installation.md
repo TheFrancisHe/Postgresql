@@ -1,2 +1,3 @@
 - https://superuser.com/questions/841270/installing-r-on-rhel-7
 - https://www.cyberciti.biz/faq/installing-rhel-epel-repo-on-centos-redhat-7-x/
+- 关于Throughout和Latency 的理解 https://docs.voltdb.com/PlanningGuide/ChapBenchmark.php
