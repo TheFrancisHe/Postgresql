@@ -1,0 +1,2 @@
+- https://superuser.com/questions/841270/installing-r-on-rhel-7
+- https://www.cyberciti.biz/faq/installing-rhel-epel-repo-on-centos-redhat-7-x/
