@@ -1,4 +1,4 @@
-**ndex only scan ,是我们用select选择字段的时候，所选的字段全部都有索引，那么只需在索引中取数据，就不必访问数据块了，从而提高效率。**
+**index only scan ,是我们用select选择字段的时候，所选的字段全部都有索引，那么只需在索引中取数据，就不必访问数据块了，从而提高效率。**
 
 中文：   http://blog.csdn.net/luojinbai/article/details/44021523
 >index only scan ,是我们用select选择字段的时候，所选的字段全部都有索引，那么只需在索引中取数据，就不必访问数据块了，从而提高效率。
