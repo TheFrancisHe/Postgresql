@@ -1,0 +1,6 @@
+- http://thoughtbirds.com/postgresql-architecture/
+- https://en.wikibooks.org/wiki/PostgreSQL/Architecture
+- http://www.cnblogs.com/flying-tiger/p/5878823.html
+- https://www.postgresql.org/files/developer/tour.pdf
+- https://www.postgresql.org/developer/coding/
+- 下载的pdf书籍，在pdf internals
