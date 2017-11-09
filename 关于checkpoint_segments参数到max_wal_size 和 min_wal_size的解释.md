@@ -1,3 +1,5 @@
+转载自 ：http://www.cnblogs.com/gaojian/p/3277406.html
+
 转载自德哥 ：http://blog.163.com/digoal@126/blog/static/1638770402015226114157379/
 
 转载自权叔 ：https://my.oschina.net/quanzl/blog/686932
@@ -5,6 +7,18 @@
 关键部分：
 
 ```
+何时发生Checkpoint呢？
+
+ 
+
+下列条件任意之一会导致Checkpoint发生：
+
+　shared_buffers中，产生了 checkpoint_segments*16MB 以上的数据。
+
+　距离上次Checkpoint发生，经过了 checkpoint_timeout *checkpoint_completion_target 秒
+
+　用户执行Checkpoint 命令。
+
 PostgreSQL 9.5 以前的版本, 通过checkpoint_segments 来触发基于XLOG个数的检查点, 
 通过 " (2 + checkpoint_completion_target) * checkpoint_segments + 1 " 这个公式来技术保留的XLOG个数.
 
