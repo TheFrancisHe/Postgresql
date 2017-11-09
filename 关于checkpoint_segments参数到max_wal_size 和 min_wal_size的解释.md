@@ -40,3 +40,9 @@ target = (double ) max_wal_size / (2.0 + CheckPointCompletionTarget);
 我们知道 CheckPointCompletionTarget 取值范围是 (0.0, 1.0)，所以最终CheckPointSegments得到的值范围是 max_wal_size 的 1/3 ～ 1/2，最小为1。
 
 ```
+我的理解：
+
+max_wal_size决定何时开始checkpoint-- （指的是由于wal日志达到一定程度自动发生ckpt的那种）
+
+min_wal_size决定何时截至checkpoint
+
