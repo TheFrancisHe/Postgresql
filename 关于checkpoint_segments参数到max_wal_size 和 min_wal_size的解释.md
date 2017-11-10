@@ -46,3 +46,6 @@ max_wal_size决定何时开始checkpoint-- （指的是由于wal日志达到一�
 
 min_wal_size决定何时截至checkpoint
 
+How to measure wal written -
+
+http://www.cybertec.at/checkpoint-distance-and-amount-of-wal/
