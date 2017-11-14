@@ -1,17 +1,13 @@
 系统表, 系统表之间基本上都是以oid关联. 例如pg_attrdef.adrelid 关联 pg_class.oid
+查看一些系统表
 
-``
-查看一些系统表：
-
+```
 postgres=# \dS+
-                                       List of relations
-   Schema   |              Name               |   Type   |  Owner   |    Size    | Description 
-------------+---------------------------------+----------+----------+------------+-------------
- pg_catalog | pg_aggregate                    | table    | postgres | 48 kB      | 
- pg_catalog | pg_am                 
+```
+
 
 看看pg_class：
-
+```
 postgres=# \d pg_class
          Table "pg_catalog.pg_class"
        Column        |   Type    | Modifiers 
@@ -29,36 +25,39 @@ postgres=# \d pg_class
  relallvisible       | integer   | not null
 
 查看oid：
-
- postgres=# select oid from pg_class limit 1 ;
+postgres=# select oid from pg_class limit 1 ;
   oid  
 -------
  74719
 (1 row)
 
 这个oid也被其他字段用来做关联。
-
 pg_class 存储所有的 object-
-
+```
 查看pg_catalog下的系统relation：
-
+```
 select relkind,relname from pg_class where relnamespace = (select oid from pg_namespace where nspname='pg_catalog') and
 relkind='r' order by 1,2;
-
+```
 
 查看pg_catalog下系统sequence：
-
+```
 select relkind,relname from pg_class where relnamespace = (select oid from pg_namespace where nspname='pg_catalog') and
 relkind='S' order by 1,2;
-
+```
 查看pg_catalog下系统view：
-
+```
 select relkind,relname from pg_class where relnamespace = (select oid from pg_namespace where nspname='pg_catalog') and
 relkind='v' order by 1,2;
 ```
 
-- 查看 access method （支持的索引）
+
+
+
+
 ```
+查看 access method （支持的索引）
+
 postgres=# select amname from pg_am;
  amname 
 --------
@@ -91,5 +90,4 @@ postgres=# select attname from pg_attribute where attrelid ='abc'::regclass ;
  xmax
  xmin
 (9 rows)
-
 ```
