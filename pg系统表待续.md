@@ -1,7 +1,8 @@
 系统表, 系统表之间基本上都是以oid关联. 例如pg_attrdef.adrelid 关联 pg_class.oid
-查看一些系统表
+
 
 ```
+查看系统表：
 postgres=# \dS+
 ```
 
