@@ -71,6 +71,12 @@ select count(*) from table where col = a and col = b and col2=xxx;
 
 https://github.com/digoal/blog/blob/master/201702/20170221_02.md
 
+>对于每个查询条件，在对应索引中找到符合条件的堆表PAGE，每个索引构造一个bitmap串。
+
+在这个bitmap串中，每一个BIT位对应一个HEAP PAGE，代表这个HEAP PAGE中有符合该条件的行。
+
+备注：关键点在于1个bit对应1个heap page-  以及本文最后的bitmap index scan 的触发情况。
+
 -关于 联合多列索引（字面翻译，直接看术语就行）
 
 ### 11.5. Combining Multiple Indexes
