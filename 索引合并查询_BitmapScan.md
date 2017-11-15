@@ -166,7 +166,7 @@ For this reason, and because each additional index scan adds extra time, the pla
 
 ```
 
-4.这段描述 使用场景
+4.这段描述 使用场景，第一段说明了 多列索引和联合索引的权衡。
 
 ```
 In all but the simplest applications, there are various combinations of indexes that might be useful,
