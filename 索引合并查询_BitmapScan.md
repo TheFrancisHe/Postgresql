@@ -84,11 +84,16 @@ https://github.com/digoal/blog/blob/master/201702/20170221_02.md
 1,先介绍下，大背景：
 
 ```
-A single index scan can only use query clauses that use the index's columns with operators of its operator class and are joined with AND. For example, given an index on (a, b) a query condition like WHERE a = 5 AND b = 6 could use the index, but a query like WHERE a = 5 OR b = 6 could not directly use the index.
+A single index scan can only use query clauses that use the index's columns with operators of its operator class and are joined with 
+
+AND. For example, given an index on (a, b) a query condition like WHERE a = 5 AND b = 6 could use the index, but a query like WHERE a = 
+
+5 OR b = 6 could not directly use the index.
 如果在 a,b 字段建立一个 联合索引 idx_ab 后，如果查询条件是 a = 5 AND b = 6 ，则不会直接使用 这个联合索引idx_ab。
 
+Fortunately, PostgreSQL has the ability to combine multiple indexes (including multiple uses of the same index) to handle cases that 
 
-Fortunately, PostgreSQL has the ability to combine multiple indexes (including multiple uses of the same index) to handle cases that cannot be implemented by single index scans. 联合索引用来解决单个索引无法导致索引无法使用的矛盾， 如上一段所描述的问题。
+cannot be implemented by single index scans. 联合索引用来解决单个索引无法导致索引无法使用的矛盾， 如上一段所描述的问题。
 
 postgres=# \d abc ;
       Table "public.abc"
@@ -160,7 +165,8 @@ For this reason, and because each additional index scan adds extra time, the pla
 4.这段描述 使用场景
 
 ```
-In all but the simplest applications, there are various combinations of indexes that might be useful, and the database developer must make trade-offs to decide which indexes to provide. 
+In all but the simplest applications, there are various combinations of indexes that might be useful,
+and the database developer must make trade-offs to decide which indexes to provide. 
 Sometimes multicolumn indexes are best, but sometimes it's better to create separate indexes and rely on the index-combination feature. //有时multicolumn索引是最好的，但是有的时候， 分开创建索引并依赖 index-combination特性更适合。
 For example, if your workload includes a mix of queries that sometimes involve only column x, sometimes only column y, and sometimes both columns, you might choose to create two separate indexes on x and y, relying on index combination to process the queries that use both columns.如，有时查询条件只有x，有时只有y，有时候全部包括，这个时候，分开创建两个索引更加合适。  
 （创建多列索引的话，如果只包含y，那就不适合了。）
