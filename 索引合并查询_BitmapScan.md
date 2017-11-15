@@ -137,7 +137,11 @@ s=1)
 
 
 这段话是说， 之前多个索引不能组合使用，现在可以组合使用了，不管是 多个不同索引还是相同索引多次使用。
-The system can form AND and OR conditions across several index scans. For example, a query like WHERE x = 42 OR x = 47 OR x = 53 OR x = 99 could be broken down into four separate scans of an index on x, each scan using one of the query clauses. The results of these scans are then ORed together to produce the result. Another example is that if we have separate indexes on x and y, one possible implementation of a query like WHERE x = 5 AND y = 6 is to use each index with the appropriate query clause and then AND together the index results to identify the result rows.
+The system can form AND and OR conditions across several index scans.
+For example, a query like WHERE x = 42 OR x = 47 OR x = 53 OR x = 99 could be broken down into four separate scans of an index on x,
+each scan using one of the query clauses. The results of these scans are then ORed together to produce the result.
+Another example is that if we have separate indexes on x and y, 
+one possible implementation of a query like WHERE x = 5 AND y = 6 is to use each index with the appropriate query clause and then AND together the index results to identify the result rows.
 
 
 
