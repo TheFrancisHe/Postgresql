@@ -50,7 +50,8 @@ http://blog.chinaunix.net/uid-20726500-id-5105905.html
 >
 Reducing checkpoint_timeout and/or max_wal_size causes checkpoints to occur more often. This allows faster after-crash recovery, since less work will need to be redone. However, one must balance this against the increased cost of flushing dirty data pages more often. If full_page_writes is set (as is the default), there is another factor to consider. To ensure data page consistency, the first modification of a data page after each checkpoint results in logging the entire page content. 
 
-- 疑问：
+疑问：
+
 >
 In that case, a smaller checkpoint interval increases the volume of output to the WAL log, partially negating the goal of using a smaller interval, and in any case causing more disk I/O.部分程度上与“使用smaller interval ckpt 会导致更多的磁盘IO相悖”--
 
