@@ -40,7 +40,7 @@ This parameter can only be set in the postgresql.conf file or on the server comm
 
 
 
-http://mysql.taobao.org/monthly/2
+http://mysql.taobao.org/monthly/2015/11/05/
 
 http://blog.chinaunix.net/uid-20726500-id-5105905.html
 
