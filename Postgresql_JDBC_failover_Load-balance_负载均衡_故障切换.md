@@ -13,7 +13,7 @@ For example an application can create two connection pools. One data source is f
 
 负载均衡：
 
->The write pool limits connections only to master node:
+The write pool limits connections only to master node:
 jdbc:postgresql://node1,node2,node3/accounting?targetServerType=master . 
 
 And read pool balances connections between slaves nodes, but allows connections also to master if no slaves are available:
