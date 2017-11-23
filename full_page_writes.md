@@ -1,5 +1,18 @@
 full_page_writes (boolean)
 
+```
+断电等system crash 会引起硬盘的页损坏，恢复的时候，仅仅通过redo里记录的信息无法还原页，这时候会造成数据丢失。
+
+pg出现了 full page write 机制，在ckpt发生后，某个page页第一次被操作后，会现将整个对应的page先写入到wal日志里，
+
+称为 full page image 或者 backup block-
+
+用另一种方式描述：主要是防止部分写的时候，突然断电导致磁盘上了block损坏而产生不可逆恢复的这种情况。
+```
+
+以下是相关参考：
+
+
 防止页折断，OS crash导致页折断，导致页混乱，导致无法从wal日志里恢复。和 wal机制连起来看。
 
 
